@@ -1,19 +1,15 @@
 import numpy as np
 
-import numpy as np
-
 def normalize_array(arr):
-    arr = np.asarray(arr, dtype=float)  # מבטיח מערך NumPy מסוג float
-    min_val = arr.min()
-    max_val = arr.max()
+    arr = np.asarray(arr, dtype=float)
+    min_val = np.min(arr)
+    max_val = np.max(arr)
     
-    # מקרה שכל הערכים שווים
-    if max_val == min_val:
-        return np.zeros_like(arr)
+    denom = max_val - min_val
     
-    # נרמול וקטורי
-    return (arr - min_val) / (max_val - min_val)
-    return normalized
+    # פתרון וקטורי גם למקרה denom=0
+    return np.where(denom == 0, 0, (arr - min_val) / denom)
+   
 
 # --- דוגמאות הרצה ---
 test1 = np.array([10.0, 20.0, 30.0, 40.0, 50.0])
