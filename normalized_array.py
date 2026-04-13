@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def normalized_array(data):
     """
     מנרמלת מערך נתונים לטווח של [0, 1] לפי שיטת Min-Max Scaling.
