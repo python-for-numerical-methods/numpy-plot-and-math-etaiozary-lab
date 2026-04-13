@@ -1,19 +1,33 @@
 import numpy as np
 
 
-import numpy as np
 
+    """
+    מנרמלת מערך נתונים לטווח של [0, 1] לפי שיטת Min-Max Scaling.
 def normalize_array(arr):
     arr = np.asarray(arr, dtype=float)
-
+    # מציאת ערכי המינימום והמקסימום במערך
     min_val = np.min(arr)
     max_val = np.max(arr)
+    
+    denom = max_val - min_val
+    
+    return np.where(denom == 0, 0, (arr - min_val) / denom)
 
+    הנוסחה לביצוע:
+    x_norm = (x - min) / (max - min)
     diff = max_val - min_val
-
+    פרמטרים:
+    data (list or np.array): מערך של מספרים.
+    if diff == 0:
+        return np.zeros_like(arr, dtype=float)
+    מחזירה:
+    np.array: מערך מנורמל. אם כל הערכים במערך זהים, יש להחזיר מערך של אפסים.
+    """
+    data = np.array(data)
+    # x_norm = (x - min) / (max - min)
     normalized = (arr - min_val) / diff
-
-    return np.where(diff == 0, 0, normalized)
+    pass
     return normalized
    
 # --- דוגמאות הרצה ---
