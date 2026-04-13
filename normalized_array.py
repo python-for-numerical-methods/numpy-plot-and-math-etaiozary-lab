@@ -9,7 +9,6 @@ def normalize_array(arr):
     
     return np.where(denom == 0, 0, (arr - min_val) / denom)
    
-
 # --- דוגמאות הרצה ---
 test1 = np.array([10.0, 20.0, 30.0, 40.0, 50.0])
 test2 = np.array([5, 5, 5, 5])
