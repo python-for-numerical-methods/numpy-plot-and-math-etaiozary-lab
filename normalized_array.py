@@ -1,5 +1,4 @@
-import numpy as np
-
+import numpy as n
 def normalized_array(data):
     """
     מנרמלת מערך נתונים לטווח של [0, 1] לפי שיטת Min-Max Scaling.
@@ -23,7 +22,6 @@ def normalize_array(arr):
     # בדיקה אם כל הערכים שווים כדי למנוע חלוקה באפס
     if diff == 0:
         return np.zeros_like(arr, dtype=float)
-
     מחזירה:
     np.array: מערך מנורמל. אם כל הערכים במערך זהים, יש להחזיר מערך של אפסים.
     """
@@ -32,7 +30,6 @@ def normalize_array(arr):
     # ביצוע הנרמול לפי הנוסחה (פעולה וקטורית)
     # x_norm = (x - min) / (max - min)
     normalized = (arr - min_val) / diff
-
     # --- כיתבו את הקוד שלכם כאן ---
     pass
     # חשוב לזכור להחליף את pass ב- return
