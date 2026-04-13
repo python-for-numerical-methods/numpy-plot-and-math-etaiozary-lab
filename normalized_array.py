@@ -1,6 +1,6 @@
 import numpy as np
 
-def normalize(arr):
+def normalize_array(arr):
     arr = np.asarray(arr, dtype=float)
     min_val = np.min(arr)
     max_val = np.max(arr)
@@ -8,7 +8,7 @@ def normalize(arr):
     denom = max_val - min_val
     
     return np.where(denom == 0, 0, (arr - min_val) / denom)
-    return normalize
+    return normalize_array
 
 # --- דוגמאות הרצה ---
 test1 = np.array([10.0, 20.0, 30.0, 40.0, 50.0])
