@@ -1,5 +1,4 @@
 import numpy as np
-
 # תא [22]
 def normalized_array(input_array):
     data = np.array(input_array)
